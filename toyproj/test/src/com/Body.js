@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 const Body = ({ path, name, item, islogin }) => {
-  // Link 리액트에서 a같은 역활을 해줘요
+  // Link 리액트에서 a같은 역할을 해줘요
   // Link 컴포넌트를 이용해서 경로를 바꿔주고 컴포넌트를 교체해서 보여준다.
   // 라우터간의 이동을 할수 있게 도와준다.
   // Link에 필요한 props는 to 어디로
@@ -12,17 +12,14 @@ const Body = ({ path, name, item, islogin }) => {
   const nav = useNavigate();
   return (
     <div className="body">
-      <Link to={path}>{name}으로 이동</Link>
+      {/* <Link to={path}>{name}으로 이동</Link>
       <button
         onClick={() => {
           nav(path);
         }}
       >
         이건 {name}으로 이동 버튼
-      </button>
-      {item && item.id ? <div>{item.id}번 상품</div> : null}
-      {item && item.num ? <div>{item.num}개</div> : null}
-      {item && item.name ? <div>이름 : {item.name}</div> : null}
+      </button> */}
       {islogin ? <div>로그인 되었음</div> : <div>로그인 안됨</div>}
     </div>
   );
