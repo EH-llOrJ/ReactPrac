@@ -32,4 +32,15 @@ react-redux 만들어진 저장소를 사용하는데 편하게 쓸 수 있게 �
 3. 리듀서 js 만들고 만든 저장소에 매개변수로 전달
 4. 완성된 저장소를 index.js에 가져와서 Provider컴포넌트를 사용해 App컴포넌트에 적용
 
+리덕스를 사용할 때 유용한 툴 Redux DevTools
+action으로 변경한 state값을 바로바로 볼 수 있다.
+다운로드는 
+크롬에 검색 혹은
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko
+
+npm 설치 명령어
+npm i redux-devtools-extension
+
+설치하고 미들웨어를 composeWithDevTools 함수로 감싸주면 된다.
+import {composeWithDevTools} from "composeWithDevTools";
 */
