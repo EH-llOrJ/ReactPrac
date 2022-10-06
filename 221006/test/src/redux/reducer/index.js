@@ -1,12 +1,12 @@
 let init = {
-  count: 0,
+  weatherData: {},
 };
 
 function reducer(state = init, action) {
   const { type, payload } = action;
   switch (type) {
-    case "A":
-      return;
+    case "GET_WEATHER_DATA":
+      return { ...state, weatherData: payload };
 
     default:
       return state;
