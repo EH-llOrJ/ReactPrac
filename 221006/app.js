@@ -18,4 +18,18 @@ UI -> Dispatch -> Action -> Middleware -> Store(Reducer)(state) -> UI
 redux-thunk 사용할 예정이며,
 적용하기도 쉽고 다른 서비스에서도 적용이 편해서 많이 사용한다.
 
+설치 명령어
+npm i redux-thunk
+
+리덕스 환경 만들어보자
+
+redux 저장소를 만들고 만드는 와중 리듀서 함수를 적용시켜준다.
+react-redux 만들어진 저장소를 사용하는데 편하게 쓸 수 있게 리액트 훅 함수를
+지원해주는 것
+
+1. 리덕스 설치하고 리덕스 리액트 설치하고
+2. 저장소 js 만들고 createStore 저장소 만들고
+3. 리듀서 js 만들고 만든 저장소에 매개변수로 전달
+4. 완성된 저장소를 index.js에 가져와서 Provider컴포넌트를 사용해 App컴포넌트에 적용
+
 */

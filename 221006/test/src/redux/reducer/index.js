@@ -3,12 +3,13 @@ let init = {
 };
 
 function reducer(state = init, action) {
-  switch (action) {
-    case action:
-      break;
+  const { type, payload } = action;
+  switch (type) {
+    case "A":
+      return;
 
     default:
-      break;
+      return state;
   }
 }
 
