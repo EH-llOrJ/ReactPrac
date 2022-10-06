@@ -25,10 +25,10 @@ function getWeather(name) {
     const data = await axios({
       url: `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=aac296175cd89d42d50c6e41a5850b8f`,
     });
-    console.log(data);
-    console.log(getState());
+    // console.log(data);
+    // console.log(getState());
     dispatch({ type: "GET_WEATHER_DATA", payload: data });
-    console.log(getState());
+    // console.log(getState());
     // getState() 함수는 store 저장소에 있는 state 객체를 반환해준다.
   };
 }
