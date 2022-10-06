@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { weather } from "./middleware";
 import axios from "axios";
@@ -33,10 +33,11 @@ function App() {
   const getWeather = (name) => {
     dispatch(weather.getWeather(name));
   };
-
+  const weatherData = useSelector((state) => state.weatherData);
   useEffect(() => {
-    getWeather("Seoul");
-  }, []);
+    // getWeather("Seoul");
+    console.log(weatherData);
+  }, [weatherData]);
 
   return (
     <div className="App">
@@ -46,7 +47,13 @@ function App() {
           setName(e.target.value);
         }}
       />
-      <button>날씨 검색</button>
+      <button
+        onClick={() => {
+          getWeather(name);
+        }}
+      >
+        날씨 검색
+      </button>
     </div>
   );
 }
