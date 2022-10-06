@@ -54,6 +54,11 @@ function App() {
       >
         날씨 검색
       </button>
+      <div>
+        지금 {weatherData && weatherData.data?.name}
+        날씨는 : {weatherData && weatherData.data?.weather[0]?.main}
+        {/* 지금 {weatherData.data.name} 없을 때 터지니까 &&와 ?를 사용해서 오류 처리 즉, 리렌더링 될 때 값이 없으면 터지기 때문에 이런 식으로 리액트는 작성을 많이 하게 된다? */}
+      </div>
     </div>
   );
 }
