@@ -29,6 +29,7 @@ function getWeather(name) {
     console.log(getState());
     dispatch({ type: "GET_WEATHER_DATA", payload: data });
     console.log(getState());
+    // getState() 함수는 store 저장소에 있는 state 객체를 반환해준다.
   };
 }
 

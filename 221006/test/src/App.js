@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import { weather } from "./middleware";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 /*
 axios
 
@@ -29,6 +29,7 @@ function App() {
   //   console.log(data);
   // }
   // getWeather();
+  const [name, setName] = useState("");
   const getWeather = (name) => {
     dispatch(weather.getWeather(name));
   };
@@ -37,7 +38,17 @@ function App() {
     getWeather("Seoul");
   }, []);
 
-  return <div className="App">test</div>;
+  return (
+    <div className="App">
+      <label>도시 이름</label>
+      <input
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+      />
+      <button>날씨 검색</button>
+    </div>
+  );
 }
 
 export default App;
