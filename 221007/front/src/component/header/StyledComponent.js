@@ -27,4 +27,21 @@ const ContentBtn = styled.li`
   padding: 10px;
 `;
 
-export { Button, HeaderWrap, HeaderContent, ContentBtn };
+const LoginWrap = styled.div`
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  color: white;
+`;
+
+const LoginInput = styled.input`
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin: 0px 10px;
+`;
+
+export { Button, HeaderWrap, HeaderContent, ContentBtn, LoginWrap, LoginInput };
