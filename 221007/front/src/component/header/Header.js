@@ -12,8 +12,20 @@ const Header = () => {
   return (
     <HeaderWrap>
       <HeaderContent>
-        <ContentBtn>MAIN</ContentBtn>
-        <ContentBtn>SHOP</ContentBtn>
+        <ContentBtn
+          onClick={() => {
+            nav("/");
+          }}
+        >
+          MAIN
+        </ContentBtn>
+        <ContentBtn
+          onClick={() => {
+            nav("/shop");
+          }}
+        >
+          SHOP
+        </ContentBtn>
       </HeaderContent>
     </HeaderWrap>
   );
