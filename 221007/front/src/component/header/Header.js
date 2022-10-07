@@ -8,8 +8,11 @@ import {
   LoginInput,
 } from "./StyledComponent";
 import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../redux/middleware/loginAction";
+import { useDispatch, useSelector } from "react-redux";
 
-const Header = () => {
+const Header = ({ isLogin }) => {
+  const dispatch = useDispatch();
   const idInput = useRef();
   const pwInput = useRef();
   // 리액트에서 태그를 선택해야하는데 어떻게 하냐
@@ -22,17 +25,30 @@ const Header = () => {
   const [wrapState, setWrapState] = useState(true);
   // 로그인 할 수 있는 상태와 회원가입 할 수 있는 상태를 나눠주기 위해서
 
+  const userName = useSelector((state) => state.loginReducer.id);
+
   const login = () => {
-    console.log(idInput, pwInput);
-    // document.querySelector("태그").value = "";
-    // document.querySelector("태그") == idInput.current
-    idInput.current.value = "";
-    pwInput.current.value = "";
+    // console.log(idInput, pwInput);
+    // // document.querySelector("태그").value = "";
+    // // document.querySelector("태그") == idInput.current
+    // idInput.current.value = "";
+    // pwInput.current.value = "";
+    dispatch(loginAction.login(idInput.value, pwInput.value));
+  };
+
+  const logout = () => {
+    dispatch(loginAction.logout());
+  };
+
+  const signUp = () => {
+    dispatch(loginAction.signUp(idInput.value, pwInput.value));
   };
   const nav = useNavigate();
 
   const setWrap = () => {
     setWrapState(!wrapState);
+    idInput.value = "";
+    pwInput.value = "";
     idInput.current.value = "";
     pwInput.current.value = "";
   };
@@ -55,23 +71,52 @@ const Header = () => {
         </ContentBtn>
       </HeaderContent>
       <LoginWrap>
-        {wrapState ? (
+        {isLogin ? (
           <>
-            <label>아이디: </label>
-            <LoginInput ref={idInput} />
-            <label>비밀번호: </label>
-            <LoginInput ref={pwInput} />
-            <Button onClick={login}>로그인</Button>
-            <Button onClick={setWrap}>회원가입</Button>
+            <div>{userName}로그인 됨</div>
+            <button onClick={logout}>로그아웃</button>
           </>
         ) : (
           <>
-            <label>아이디: </label>
-            <LoginInput ref={idInput} />
-            <label>비밀번호: </label>
-            <LoginInput ref={pwInput} />
-            <Button onClick={login}>회원 가입</Button>
-            <Button onClick={setWrap}>로그인 하실?</Button>
+            {wrapState ? (
+              <>
+                <label>아이디: </label>
+                <LoginInput
+                  ref={idInput}
+                  onChange={(e) => {
+                    idInput.value = e.target.value;
+                  }}
+                />
+                <label>비밀번호: </label>
+                <LoginInput
+                  ref={pwInput}
+                  onChange={(e) => {
+                    pwInput.value = e.target.value;
+                  }}
+                />
+                <Button onClick={login}>로그인</Button>
+                <Button onClick={setWrap}>회원가입</Button>
+              </>
+            ) : (
+              <>
+                <label>아이디: </label>
+                <LoginInput
+                  ref={idInput}
+                  onChange={(e) => {
+                    idInput.value = e.target.value;
+                  }}
+                />
+                <label>비밀번호: </label>
+                <LoginInput
+                  ref={pwInput}
+                  onChange={(e) => {
+                    pwInput.value = e.target.value;
+                  }}
+                />
+                <Button onClick={signUp}>회원 가입</Button>
+                <Button onClick={setWrap}>로그인 하실?</Button>
+              </>
+            )}
           </>
         )}
       </LoginWrap>
