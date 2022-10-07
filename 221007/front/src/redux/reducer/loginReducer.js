@@ -9,9 +9,15 @@ function reducer(state = init, action) {
   switch (type) {
     case "LOGIN":
       console.log("여긴 로그인");
-      return;
+      return { ...state, id: payload.id, pw: payload.pw, isLogin: true };
+
+    case "LOGOUT":
+      console.log("여긴 로그아웃");
+      return { ...state, id: "", pw: "", isLogin: false };
 
     default:
       return state;
   }
 }
+
+export default reducer;
