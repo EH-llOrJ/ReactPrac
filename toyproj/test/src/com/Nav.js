@@ -1,21 +1,22 @@
 import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ path, name }) => {
+  const navprac = useNavigate();
   return (
     <div className="navi">
-      테스트용
-      <a href="/Home" className="nav-home">
-        <div className="nav-home-div"></div>Home
-      </a>
-      <a href="/Blogs" className="nav-blogs">
-        <div className="nav-home-div"></div>Blogs
-      </a>
-      <a href="/Home" className="nav-home">
-        <div className="nav-home-div"></div>Login
-      </a>
-      <a href="/Home" className="nav-home">
-        <div className="nav-home-div"></div>Logout
-      </a>
+      <div className="nav-home-div">
+        <Link to="/borad">Borad</Link>
+      </div>
+      <div className="nav-home-div">
+        <Link to="/blogs">Blogs</Link>
+      </div>
+      <div className="nav-home-div">
+        <Link to="/loginprac">LoginPrac</Link>
+      </div>
+      <div className="nav-home-div">
+        <Link to="/join">Join</Link>
+      </div>
     </div>
   );
 };
