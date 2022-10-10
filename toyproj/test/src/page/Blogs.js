@@ -4,7 +4,7 @@ import { Header, Nav, Body } from "../com";
 const Blogs = () => {
   return (
     <div>
-      <Header title="블로그 테스트" />
+      <Header title="블로그" />
       <Nav />
       <Body />
     </div>

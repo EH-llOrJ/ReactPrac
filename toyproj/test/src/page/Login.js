@@ -10,7 +10,7 @@ const Login = ({ login, islogin }) => {
       <Header title="로그인 페이지" />
       <Body path="/shop" name="상점 페이지" islogin={islogin} />
       <Body path="/mypage" name="마이 페이지" islogin={islogin} />
-      <button onClick={setLogin}>로그인 하자</button>
+      <button>로그인 하자</button>
     </div>
   );
 };

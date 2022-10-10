@@ -6,7 +6,9 @@ const LoginPrac = () => {
     <div>
       <Header title="로그인 테스트" />
       <Nav />
-      <Body />
+      <input placeholder="아이디"></input>
+      <input placeholder="비밀번호"></input>
+      <button>로그인</button>
     </div>
   );
 };
