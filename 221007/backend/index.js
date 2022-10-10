@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const dot = require("dotenv").config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 const { sequelize, user } = require("./public");
 
 /*
@@ -33,6 +33,7 @@ sequelize
   })
   .catch((err) => {
     console.log(err);
+    console.log("env 파일 갖고 왔는지?");
   });
 
 const options = {

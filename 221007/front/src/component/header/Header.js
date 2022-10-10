@@ -95,7 +95,7 @@ const Header = ({ isLogin }) => {
                   }}
                 />
                 <Button onClick={login}>로그인</Button>
-                <Button onClick={setWrap}>회원가입</Button>
+                <Button onClick={setWrap}>회원가입 창</Button>
               </>
             ) : (
               <>
@@ -113,8 +113,8 @@ const Header = ({ isLogin }) => {
                     pwInput.value = e.target.value;
                   }}
                 />
-                <Button onClick={signUp}>회원 가입</Button>
-                <Button onClick={setWrap}>로그인 하실?</Button>
+                <Button onClick={signUp}>회원가입진행</Button>
+                <Button onClick={setWrap}>로그인 창</Button>
               </>
             )}
           </>
