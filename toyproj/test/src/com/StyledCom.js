@@ -2,8 +2,8 @@ import styled from "styled-components";
 // 마켓 플레이스 가면 vscode-styled-components 설치하면 편함
 
 const Button = styled.button`
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 60px;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -22,7 +22,7 @@ const HeaderWrap = styled.div`
   height: 50px;
   background-color: gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -51,8 +51,8 @@ const LoginWrap = styled.div`
 const LoginInput = styled.input`
   height: 30px;
   margin: 0;
-  padding: 0;
-  border: 0;
+  padding: 10px;
+  border: 1px dotted gray;
   margin: 0px 10px;
 `;
 

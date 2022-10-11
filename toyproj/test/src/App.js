@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Main, Login, Borad, Blogs, LoginPrac, Join } from "./page";
+import { Main, Borad, Blogs, LoginPrac, Join } from "./page";
 // import { useState } from "react";
 // import { logins } from "./redux/middleware";
 import { useSelector } from "react-redux";
@@ -17,7 +17,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
-        {/* <Route path="/mypage" element={<Redirect />} /> */}
         <Route path="/borad" element={<LoginRedirect />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/loginprac" element={<LoginPrac />} />

@@ -17,21 +17,23 @@ const Join = () => {
     <div className="div-login-ui">
       <Header title="회원가입" />
       <Nav />
-      <LoginInput
-        placeholder="아이디"
-        ref={idInput}
-        onChange={(e) => {
-          idInput.value = e.target.value;
-        }}
-      />
-      <LoginInput
-        placeholder="비밀번호"
-        ref={pwInput}
-        onChange={(e) => {
-          pwInput.value = e.target.value;
-        }}
-      />
-      <Button onClick={signUp}>회원가입</Button>
+      <div className="center-div">
+        <LoginInput
+          placeholder="아이디"
+          ref={idInput}
+          onChange={(e) => {
+            idInput.value = e.target.value;
+          }}
+        />
+        <LoginInput
+          placeholder="비밀번호"
+          ref={pwInput}
+          onChange={(e) => {
+            pwInput.value = e.target.value;
+          }}
+        />
+        <Button onClick={signUp}>회원가입</Button>
+      </div>
     </div>
   );
 };
