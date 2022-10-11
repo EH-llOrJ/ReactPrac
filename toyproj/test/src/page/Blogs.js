@@ -6,7 +6,7 @@ const Blogs = () => {
     <div>
       <Header title="블로그" />
       <Nav />
-      <Body />
+      <Body text="블로그 텍스트 테스트" />
     </div>
   );
 };

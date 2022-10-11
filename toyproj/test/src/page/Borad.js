@@ -6,7 +6,7 @@ const Home = () => {
     <div>
       <Header title="게시판 테스트" />
       <Nav />
-      <Body />
+      <Body text="borad ?" />
     </div>
   );
 };

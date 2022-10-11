@@ -5,7 +5,7 @@ const Main = ({ islogin }) => {
     <div>
       <Header title="메인페이지" />
       <Nav />
-      <Body path="/login" name="로그인 페이지" islogin={islogin} />
+      <Body islogin={islogin} />
     </div>
   );
 };

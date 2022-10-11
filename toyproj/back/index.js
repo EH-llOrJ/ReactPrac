@@ -13,7 +13,9 @@ sequelize
   })
   .catch((err) => {
     console.log(err);
-    console.log("env 파일 갖고 왔는지?");
+    console.log(
+      "이외 env 파일 갖고 왔는지? 혹은 mysql 서비스 종료시키진 않았는지?"
+    );
   });
 
 const options = {

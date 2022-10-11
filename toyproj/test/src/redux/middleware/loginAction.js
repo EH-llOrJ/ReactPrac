@@ -39,10 +39,7 @@ function signUp(id, pw, setWrap) {
     });
     console.log(user);
     alert(user.data);
-    if (user.data === "회원가입 완료") {
-      setWrap();
-    }
   };
 }
 
-export const loginAction = { login, signUp, logout };
+export const loginAction = { login, logout, signUp };

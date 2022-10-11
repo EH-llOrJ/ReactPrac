@@ -1,23 +1,37 @@
-import React from "react";
-import { Header, Nav, Body } from "../com";
-// import { useDispatch } from "react-redux";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { Button, LoginInput } from "../com/StyledCom";
+// import { useNavigate } from "react-router-dom";
+import { loginAction } from "../redux/middleware/loginAction";
+import { useDispatch } from "react-redux";
+import { Header, Nav } from "../com";
 
-const Join = ({}) => {
-  // const dispatch = useDispatch();
-  // const idInput = useRef();
-  // const pwInput = useRef();
-  // const userName = useSelector((state) => state.loginReducer.id);
-  // const signUp = () => {
-  //   dispatch(loginAction.signUp(idInput.value, pwInput.value));
-  // };
+const Join = () => {
+  const dispatch = useDispatch();
+  const idInput = useRef();
+  const pwInput = useRef();
+
+  const signUp = () => {
+    dispatch(loginAction.signUp(idInput.value, pwInput.value));
+  };
   return (
-    <div>
-      <Header title="회원가입 테스트" />
+    <div className="div-login-ui">
+      <Header title="회원가입" />
       <Nav />
-      <input placeholder="아이디"></input>
-      <input placeholder="비밀번호"></input>
-      <button>회원가입</button>
+      <LoginInput
+        placeholder="아이디"
+        ref={idInput}
+        onChange={(e) => {
+          idInput.value = e.target.value;
+        }}
+      />
+      <LoginInput
+        placeholder="비밀번호"
+        ref={pwInput}
+        onChange={(e) => {
+          pwInput.value = e.target.value;
+        }}
+      />
+      <Button onClick={signUp}>회원가입</Button>
     </div>
   );
 };
