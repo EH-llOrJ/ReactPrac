@@ -2,7 +2,7 @@ Auto Import/ Auto Import Es6 ...
 Path Intellisense
 Prettier - Code formatter
 vscode-styled-components
-
+Color Highlight
 Auto Rename Tag
 Auto Close Tag
 Code Runner
@@ -17,3 +17,6 @@ Live Server
 Material Icon Theme
 
 px-to-vw
+Night Owl
+indent-rainbow
+세가지 사용 한번 해보는 정도?
