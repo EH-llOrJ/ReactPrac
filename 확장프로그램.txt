@@ -1,0 +1,19 @@
+Auto Import/ Auto Import Es6 ...
+Path Intellisense
+Prettier - Code formatter
+vscode-styled-components
+
+Auto Rename Tag
+Auto Close Tag
+Code Runner
+Colonize
+CSS Peek
+Es7| React/Redux/...
+EsLint
+Git Graph
+HTML CSS Support
+Korean Language Pack for Visual Studio Code
+Live Server
+Material Icon Theme
+
+px-to-vw
