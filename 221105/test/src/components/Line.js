@@ -1,5 +1,6 @@
 import React from "react";
 
+// 키값으로 들어가야하니까 ({el})
 const Line = ({ el }) => {
   console.log(el);
   return (
