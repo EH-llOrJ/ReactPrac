@@ -22,6 +22,11 @@ function reducer(state = init, action) {
       console.log("글 등록");
       return { ...state }; // break 가 아닌 값을 반환해줘야 함 주소가 바뀌어야 값이 변했다고 인지하고 업데이트 하기 때문에
 
+    case "GETLISTCONTENT":
+      console.log("글 조회");
+      console.log(payload);
+      return { ...state, content: payload.data };
+
     case "delete":
       return;
 

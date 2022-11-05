@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Line from "./Line";
+import { ContentFn } from "./../redux/middleware/index";
 
 const Border = () => {
   const content = useSelector((state) => state.content);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    //    console.log(content);
+    // }, [content]);
+    dispatch(ContentFn.GetContent(0, 10));
+  }, []);
   useEffect(() => {
     console.log(content);
   }, [content]);
@@ -16,8 +23,8 @@ const Border = () => {
         <li>작성일</li>
         <li>조회수</li>
       </ul>
-      {content.map((el) => (
-        <Line el={el} />
+      {content.map((el, index) => (
+        <Line el={el} index={index + 1} />
       ))}
     </div>
   );

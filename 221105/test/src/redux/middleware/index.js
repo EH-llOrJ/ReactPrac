@@ -3,13 +3,17 @@ import axios from "axios";
 // get, post 등등
 
 // 글 조회
-function GetContent() {
+function GetContent(index, count) {
   return async (dispatch, getState) => {
     const content = await axios({
       method: "post",
-      url: "",
-      data: {},
+      url: "http://localhost:8000/getListContent",
+      data: {
+        index, // 페이지 네이션
+        count, // 글의 갯수
+      },
     });
+    dispatch({ type: "GETLISTCONTENT", payload: content });
   };
 }
 
@@ -30,7 +34,17 @@ function CreateContent(title, text, user) {
 }
 
 // 글 삭제
-function DeleteContent() {}
+function DeleteContent(index) {
+  return async (dispatch, getState) => {
+    await axios({
+      method: "post",
+      url: "http://localhost:8000/deleteContent",
+      data: {
+        index,
+      },
+    });
+  };
+}
 
 // 글 수정
 function UpdateContent() {}

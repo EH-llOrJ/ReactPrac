@@ -6,10 +6,7 @@ const dot = require("dotenv").config();
 const PORT = process.env.PORT || 80;
 const cors = require("cors");
 const { sequelize, content } = require("./public");
-
-app.listen(PORT, () => {
-  console.log(PORT, "서버 열림");
-});
+const { count } = require("./public/content");
 
 sequelize
   .sync({ force: false })
@@ -30,6 +27,11 @@ app.get("/test", (req, res) => {
 
 app.use(express.json());
 
+app.post("/deleteContent", (req, res) => {
+  const { index } = req.body;
+  content.destroy({ where: { id: index } });
+});
+
 app.post("/createContent", (req, res) => {
   // console.log(req.body);
   const { title, text, user } = req.body;
@@ -37,7 +39,16 @@ app.post("/createContent", (req, res) => {
   res.send(req.body);
 });
 
-app.get("/testCreate", (req, res) => {
-  content.create({ title: "난 테스트", user: "테스트 유저", count: 0 });
-  res.send();
+app.post("/getListContent", async (req, res) => {
+  const { index, count } = req.body;
+  const contents = await content.findAll({
+    // offset: index * 10, // 원하는 글의 갯수
+    offset: index * count,
+    limit: count,
+  });
+  res.send(contents);
+});
+
+app.listen(PORT, () => {
+  console.log(PORT, "서버 열림");
 });
