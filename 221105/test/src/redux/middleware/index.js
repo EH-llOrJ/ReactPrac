@@ -6,7 +6,18 @@ import axios from "axios";
 function GetContent() {}
 
 // 글 생성
-function CreateContent() {}
+function CreateContent(title, user) {
+  return async (dispatch, getState) => {
+    const content = await axios({
+      method: "post",
+      url: "http://localhost:8000/createContent",
+      data: {
+        id: "ididididdidd",
+      },
+    });
+    console.log(content);
+  };
+}
 
 // 글 삭제
 function DeleteContent() {}

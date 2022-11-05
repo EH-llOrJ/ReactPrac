@@ -31,8 +31,8 @@ app.get("/test", (req, res) => {
 app.use(express.json());
 
 app.post("/createContent", (req, res) => {
-  console.log(req);
-  res.sned("");
+  console.log(req.body);
+  res.send(req.body);
 });
 
 app.get("/testCreate", (req, res) => {
