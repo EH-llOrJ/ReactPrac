@@ -8,6 +8,7 @@ const Line = ({ el, index }) => {
   const dispatch = useDispatch();
   function delBtn() {
     dispatch(ContentFn.DeleteContent(el.id));
+    dispatch(ContentFn.GetContent(0, 10));
   }
   return (
     <ul>

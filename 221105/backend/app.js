@@ -28,8 +28,9 @@ app.get("/test", (req, res) => {
 app.use(express.json());
 
 app.post("/deleteContent", (req, res) => {
-  const { index } = req.body;
-  content.destroy({ where: { id: index } });
+  const { num } = req.body;
+  content.destroy({ where: { id: num } });
+  res.send("");
 });
 
 app.post("/createContent", (req, res) => {

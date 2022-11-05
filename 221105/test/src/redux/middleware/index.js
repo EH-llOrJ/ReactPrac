@@ -34,15 +34,26 @@ function CreateContent(title, text, user) {
 }
 
 // 글 삭제
-function DeleteContent(index) {
+function DeleteContent(num) {
   return async (dispatch, getState) => {
     await axios({
       method: "post",
       url: "http://localhost:8000/deleteContent",
       data: {
-        index,
+        num,
       },
     });
+    const { index, count } = getState();
+    // console.log(index, count);
+    const content = await axios({
+      method: "post",
+      url: "http://localhost:8000/getListContent",
+      data: {
+        index, // 페이지 네이션
+        count, // 글의 갯수
+      },
+    });
+    dispatch({ type: "GETLISTCONTENT", payload: content });
   };
 }
 

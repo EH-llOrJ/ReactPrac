@@ -10,6 +10,8 @@ let init = {
       count: 0,
     },
   ], // 게시판이니까 배열로 넣음
+  index: 0,
+  count: 10,
 };
 
 function reducer(state = init, action) {
@@ -24,11 +26,11 @@ function reducer(state = init, action) {
 
     case "GETLISTCONTENT":
       console.log("글 조회");
-      console.log(payload);
+      // console.log(payload);
       return { ...state, content: payload.data };
 
-    case "delete":
-      return;
+    case "DELCONTENT":
+      return { ...state };
 
     default:
       return state;
