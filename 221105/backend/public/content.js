@@ -8,6 +8,10 @@ class content extends Sequelize.Model {
           type: Sequelize.STRING(20),
           allowNull: false,
         },
+        text: {
+          type: Sequelize.STRING(500),
+          allowNull: true,
+        },
         user: {
           type: Sequelize.STRING(10),
           allowNull: false,

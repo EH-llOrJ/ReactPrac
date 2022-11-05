@@ -3,16 +3,26 @@ import axios from "axios";
 // get, post 등등
 
 // 글 조회
-function GetContent() {}
+function GetContent() {
+  return async (dispatch, getState) => {
+    const content = await axios({
+      method: "post",
+      url: "",
+      data: {},
+    });
+  };
+}
 
 // 글 생성
-function CreateContent(title, user) {
+function CreateContent(title, text, user) {
   return async (dispatch, getState) => {
     const content = await axios({
       method: "post",
       url: "http://localhost:8000/createContent",
       data: {
-        id: "ididididdidd",
+        title,
+        text,
+        user,
       },
     });
     console.log(content);
