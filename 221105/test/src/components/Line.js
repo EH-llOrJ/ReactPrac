@@ -15,7 +15,7 @@ const Line = ({ el, index }) => {
       <li>{index}</li>
       <li>{el.title}</li>
       <li>{el.user}</li>
-      <li>{el.createAt}</li>
+      <li>{el.createdAt}</li>
       <li>{el.count}</li>
       <button onClick={delBtn}>삭제</button>
     </ul>
