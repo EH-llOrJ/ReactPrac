@@ -16,7 +16,9 @@ const Border = () => {
         <li>작성일</li>
         <li>조회수</li>
       </ul>
-      <Line />
+      {content.map((el) => (
+        <Line el={el} />
+      ))}
     </div>
   );
 };

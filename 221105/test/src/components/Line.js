@@ -1,13 +1,14 @@
 import React from "react";
 
-const Line = () => {
+const Line = ({ el }) => {
+  console.log(el);
   return (
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
+      <li>{el.num}</li>
+      <li>{el.title}</li>
+      <li>{el.user}</li>
+      <li>{el.createAt}</li>
+      <li>{el.count}</li>
     </ul>
   );
 };
