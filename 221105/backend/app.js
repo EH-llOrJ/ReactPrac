@@ -18,7 +18,7 @@ sequelize
   });
 
 // 브라우저 보안 정책
-// 개발용으로 그냥 ture 원래는 도메인
+// 개발용으로 그냥 true 원래는 도메인
 app.use(cors({ origin: true }));
 
 app.get("/test", (req, res) => {

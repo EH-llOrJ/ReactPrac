@@ -47,7 +47,7 @@
 // 그럴 필요가 없다. 새로고침도 필요없는 이유
 
 // 편리한 익스텐션
-// es7 react/redux/graphQL/react-native snippents
+// es7 react/redux/graphQL/react-native snippets
 // 우리가 리액트로 작업을 하면서 리액트 키워드를 사용할수 있게 도와준다.
 
 // 달력만들기

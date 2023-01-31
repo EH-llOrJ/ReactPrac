@@ -1,6 +1,11 @@
-import React, { useState } from 'react'
-import {Header, Body} from '../com'
-import { Link,useLocation, useParams, useSearchParams } from 'react-router-dom'
+import React, { useState } from "react";
+import { Header, Body } from "../com";
+import {
+  Link,
+  useLocation,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 // 파라미터 값을 가져오기 위한 방법
 // 리액트에서 지원주는 유용한 함수를 뭐라고했죠?
 // 리액트 훅 함수를 사용을 해서 작업 할수있다
@@ -25,25 +30,25 @@ import { Link,useLocation, useParams, useSearchParams } from 'react-router-dom'
 // 현재 경로를 가져와서 사용해야하는데.. 또 함수 useLocation
 // 함수 실행후 반환된 객체 사용
 const Detail = () => {
-    const [serch,setSerch] = useState('');
-    const params = useParams();
-    const location = useLocation();
-    const [query, setQuery] = useSearchParams();
-    console.log(location);
-    // q키의 값을 가져오겠다는 뜻
-    console.log(query.get('q'));
-    const keyInput = (e) =>{
-        setSerch(e.target.value);
-    }
+  const [search, setSearch] = useState("");
+  const params = useParams();
+  const location = useLocation();
+  const [query, setQuery] = useSearchParams();
+  console.log(location);
+  // q키의 값을 가져오겠다는 뜻
+  console.log(query.get("q"));
+  const keyInput = (e) => {
+    setSearch(e.target.value);
+  };
   return (
     <div>
-        <Header title="상세 페이지"/>
-        <div>{serch}</div>
-        <div>너 이거 검색했어 {query.get('q')}</div>
-        <input onChange={keyInput}/>
-        <Link to={location.pathname+"?q="+serch}>검색하기</Link>
+      <Header title="상세 페이지" />
+      <div>{search}</div>
+      <div>너 이거 검색했어 {query.get("q")}</div>
+      <input onChange={keyInput} />
+      <Link to={location.pathname + "?q=" + search}>검색하기</Link>
     </div>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
